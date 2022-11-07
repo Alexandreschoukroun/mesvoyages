@@ -28,7 +28,7 @@ class Visite
      * @ORM\Column(type="integer")
      */
     private $id;
-
+    
     /**
      * @ORM\Column(type="string", length=50)
      */
@@ -46,6 +46,7 @@ class Visite
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Range(min = 0, max = 20)
      */
     private $bote;
 
@@ -61,6 +62,7 @@ class Visite
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\GreaterThan(propertyPath="tempmin")
      */
     private $tempmax;
 
